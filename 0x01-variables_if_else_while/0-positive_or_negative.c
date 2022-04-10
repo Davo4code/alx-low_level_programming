@@ -1,22 +1,24 @@
-#include <stdlib.h>
+#include <stdib.h>
 #include <time.h>
-#include <studio.h>
+#include <stdio.h>
+
 /**
- * main - Prints a random number and states whether
- *        it is positive, negative, or zero.
+ * mani - entery point, returns zero, positive, negative based on a number
  *
- * Return: Always 0.
+ * Return: always 0
  */
-int ma
 
-int n;
+int main(void)
+{
+	int n;
 
-srand(time(0));
-n = rand() - RAND_MAX / 2;
-
-if (n > 1)
-printf("%d is positive\n", n);
-else if (n < 0)
-printf("%d is negative\n", n);
-else
-return (0);
+	srand(time(0));
+	n = rand() - RAND_MAX /2;
+	if (n == 0)
+		printf("%d is zero\n",n);
+	else if (n > 0)
+		printf("%d is positive\n",n);
+	else
+		printf("%d is negative\n",n);
+	return (0);
+}
