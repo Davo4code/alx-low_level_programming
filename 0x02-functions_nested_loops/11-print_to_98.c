@@ -1,23 +1,40 @@
 #include <stdio.h>
 
 /**
- * print_to_98 - prints all natural numbers from input to 98,
- *               in order separated by a comma followed by a space.
- *@n: The number to begin conunting at.
+ * print_to_98 - prints from a given number upto 98
+ * @n: the number to start from
+ *
+ * Return: Nothing, Void
  */
 void print_to_98(int n)
 {
-if (n >= 98)
-{
-while (n > 98)
-printf("%d, ", n--);
-printf("%d\n", n);
-}
-
-else
-{
-while (n < 98)
-printf("%d, ", n++);
-printf("%d, ", n);
-}
+	if (n > 98)
+	{
+		for (; n >= 98; n--)
+		{
+			if (n != 98)
+			{
+				printf("%d, ", n);
+			}
+			else
+			{
+				printf("%d", n);
+			}
+		}
+	}
+	else
+	{
+		for (; n <= 98; n++)
+		{
+			if (n != 98)
+			{
+				printf("%d, ", n);
+			}
+			else
+			{
+				printf("%d", n);
+			}
+		}
+	}
+	printf("\n");
 }
