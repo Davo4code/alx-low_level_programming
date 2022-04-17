@@ -1,20 +1,40 @@
-#include "main.h"
+#include <stdio.h>
+
 /**
- * _isupper - checkes upper case
- * @c: print int
- * Return: give 1 or 0
+ * print_to_98 - prints from a given number upto 98
+ * @n: the number to start from
+ *
+ * Return: Nothing, Void
  */
-
-int _isupper(int c)
+void print_to_98(int n)
 {
-if (c >= 'A' && c <= 'Z')
-{
-return (1);
-}
-
-else
-{
-return (0);
-}
-
+	if (n > 98)
+	{
+		for (; n >= 98; n--)
+		{
+			if (n != 98)
+			{
+				printf("%d, ", n);
+			}
+			else
+			{
+				printf("%d", n);
+			}
+		}
+	}
+	else
+	{
+		for (; n <= 98; n++)
+		{
+			if (n != 98)
+			{
+				printf("%d, ", n);
+			}
+			else
+			{
+				printf("%d", n);
+			}
+		}
+	}
+	printf("\n");
 }
