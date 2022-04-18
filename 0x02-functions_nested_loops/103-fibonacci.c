@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Prints the sum of even - valued Fibonacci sequence
@@ -6,25 +6,26 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
-unsigned long fib1 = 0, fib2 = 1, fibsum;
-float tot_sum;
+		unsigned long fib1 = 0, fib2 = 1, sum;
+			float total_sum;
 
-while (1)
-{
-fibsum = fib1 + fib2;
-if (fibsum > 4000000)
-break;
+				while (1)
+						{
+									sum = fib1 + fib2;
 
-if ((fibsum % 2) == 0)
-tot_sum += fibsum;
+											if (sum > 4000000)
+															break;
 
-fib1 = fib2;
-fib2 = fibsum;
+													if ((sum % 2) == 0)
+																	total_sum += sum;
+
+															fib1 = fib2;
+																	fib2 = sum;
+																		}
+					printf("%.0f\n", total_sum);
+
+						return (0);
 }
-printf("%.of\n", tot_sum);
-
-return (0);
-}
-
