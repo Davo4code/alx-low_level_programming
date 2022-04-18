@@ -1,50 +1,72 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Prints the first 98 Fibonacci numbers, starting with
- *        1 and 2, separated by a comma followed by a space.
- *
- * Return: Always 0.
- */
+ *  * numLength - returns the length of string
+ *   *
+ *    * @num: operand number
+ *     *
+ *      * Return: number of digits
+ *      */
+
+int numLength(int num)
+{
+		int length = 0;
+
+			if (!num)
+						return (1);
+
+				while (num)
+						{
+									num = num / 10;
+											length += 1;
+												}
+
+					return (length);
+}
+
+/**
+ *  * main - Entry point
+ *   *
+ *    * Description: prints the first 98 Fibonacci numbers
+ *     *	starting with 1 and 2 followed by a new line
+ *      *
+ *       *	Solution was copied from Nobert Patrick
+ *        *	Wise, github handle: Trikcode
+ *         *
+ *          * Return: Always 0 (Success)
+ *          */
+
 int main(void)
 {
-int count;
-unsigned long fib1 = 0, fib2 = 1, sum;
-unsigned long fib1_half1, fib1_half2, fib2_half1, fib2_half2;
-unsigned long half1, half2;
+		int count, initial0s;
+			unsigned long f1 = 1, f2 = 2, sum, mx = 100000000, f1o = 0, f2o = 0, sumo = 0;
 
-for (count = 0; count < 92; count ++)
-{
-sum = fib1 + fib2;
-printf("%lu, ", sum);
+				for (count = 1; count <= 98; ++count)
+						{
+									if (f1o > 0)
+													printf("%lu", f1o);
+											initial0s = numLength(mx) - 1 - numLength(f1);
 
-fib1 = fib2;
-fib2 = sum;
-}
+													while (f1o > 0 && initial0s > 0)
+																{
+																				printf("%d", 0);
+																							--initial0s;
+																									}
 
-fib1_half1 = fib1 / 1000000000;
-fib2_half1 = fib2 / 1000000000;
-fib2_half2 = fib2 % 1000000000;
-fib2_half2 = fib2 % 1000000000;
+															printf("%lu", f1);
 
-for (count = 0; count < 92; count++)
-{
+																	sum = (f1 + f2) % mx;
+																			sumo = f1o + f2o + (f1 + f2) / mx;
+																					f1 = f2;
+																							f1o = f2o;
+																									f2 = sum;
+																											f2o = sumo;
 
-half1 = fib1_half1 + fib2_half1;
-half2 = fib1_half2 + fib2_half2;
-if (fib1_half2 + fib2_half2 > 9999999999)
-{
-half1 +=1;
-half2 %= 1000000000;
-}
-printf("%lu%lu", half1,half2);
-if (count != 98)
-printf(", ");
-fib1_half1 = fib2_half1;
-fib2_half2 = fib2_half2;
-fib2_half1 = half1;
-fib2_half2 = half2;
-}
-printf("\n");
-return (0);
+																													if (count != 98)
+																																	printf(", ");
+																															else
+																																			printf("\n");
+																																}
+
+					return (0);
 }
