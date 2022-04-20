@@ -1,6 +1,3 @@
-#ifndef MAIN_H
-#define MAIN_H
-
 void positive_or_negative(int n);
 int largest_number(int a, int b, int c);
 int convert_day(int month, int day);
@@ -16,4 +13,3 @@ char *cap_string(char *);
 char *rot13(char *);
 void print_number(int n);
 
-#endif /* MAIN_H */
