@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * main - Prints all the args content
- * @argc: argument count
- * @argv: argument vector
- *   
- * Return: Always zero
- */
+  * main - Prints all the args content
+  * @argc: argument count
+  * @argv: argument vector
+  *
+  * Return: Always zero
+  */
 int main(int argc, char *argv[])
 {
 	int i;
@@ -16,5 +16,7 @@ int main(int argc, char *argv[])
 	{
 		printf("%s\n", argv[i]);
 	}
+
 	return (0);
 }
+
