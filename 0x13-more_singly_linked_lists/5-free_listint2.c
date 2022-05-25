@@ -28,19 +28,3 @@ void free_listint2(listint_t **head)
 	free(*head);
 	head = 0;
 }
-
-    © 2022 GitHub, Inc.
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-
